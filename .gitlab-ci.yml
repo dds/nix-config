@@ -1,0 +1,6 @@
+image: nixos/nix:latest
+
+pages:
+  script:
+    - nix-env -i bash gnumake curl
+    - make test
