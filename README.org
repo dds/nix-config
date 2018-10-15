@@ -1,0 +1,20 @@
+* What is this?
+
+My personal nix configuration, i.e. my home directory, my config files, all of my tools are specified here.
+
+* Nix?
+
+Nix is a pure, functional expression language for packaging software. By being pure, it has no dependencies on anything outside its store. This provides the basis for defining the configuration of my computer environment.
+
+* How do I install it?
+
+0. Get =bash=, =make= and =curl=
+
+1. Install =nix=
+#+begin_src sh
+curl https://nixos.org/nix/install | sh
+#+end_src
+
+2. Clone this repo
+
+3. Run =make=
