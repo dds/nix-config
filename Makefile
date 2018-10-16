@@ -4,7 +4,7 @@ export HOME_MANAGER_CONFIG   =  config/home.nix
 all: install
 
 build:
-	nix build -f "channel:$(HOME_MANAGER_CHANNEL)" home-manager --keep-going
+	nix build -f "<nixpkgs>" home-manager --keep-going
 
 test: build
 	result/bin/home-manager -n switch

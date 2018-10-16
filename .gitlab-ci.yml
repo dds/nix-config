@@ -1,5 +1,9 @@
 image: nixos/nix:latest
 
+cache:
+  paths:
+    - /nix/
+
 pages:
   script:
     - nix-env -i gnumake
