@@ -1,4 +1,3 @@
-export HOME_MANAGER_CHANNEL  =  nixpkgs-unstable
 export HOME_MANAGER_CONFIG   =  config/home.nix
 
 all: install
