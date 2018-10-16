@@ -1,10 +1,9 @@
 image: nixos/nix:latest
 
-cache:
-  paths:
-    - /nix/
+before_script:
+  - nix-channel --update
+  - nix-env -i gnumake
 
-pages:
+test:
   script:
-    - nix-env -i gnumake
     - make test
