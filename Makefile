@@ -1,15 +1,14 @@
-HOME_MANAGER_CHANNEL  =  nixpkgs-unstable
-HOME_MANAGER_CONFIG   =  config/home.nix
+export HOME_MANAGER_CHANNEL  =  nixpkgs-unstable
+export HOME_MANAGER_CONFIG   =  config/home.nix
 
 all: install
 
 build:
-	nix build -f "channel:$(HOME_MANAGER_CHANNEL)" home-manager \
-		--argstr confPath "$(HOME_MANAGER_CONFIG)" \
-		--keep-going
+	nix build -f "channel:$(HOME_MANAGER_CHANNEL)" home-manager --keep-going
 
 test: build
-	result/bin/home-manager -n -v -f "$(HOME_MANAGER_CONFIG)" switch
+	@result/bin/home-manager -n -v switch
 
 install: build test
-	result/bin/home-manager switch -f "$(HOME_MANAGER_CONFIG)"
+	@result/bin/home-manager switch
+	@echo "Home generation:   $$(result/bin/home-manager generations | head -1)"
